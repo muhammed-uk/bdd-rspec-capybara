@@ -6,7 +6,7 @@
     <h3><%= link_to article.title, article_path(article) %></h3>
     <%= truncate(article.body, length: 500) %>
     <div class="author">
-      <small>Created by: <%= article.user.email %></small>
+      <small>Created by: <%= article.user&.email %></small>
     </div>
   <% end %>
 <% end %>

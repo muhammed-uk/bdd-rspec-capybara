@@ -3,8 +3,9 @@ require 'rails_helper'
 RSpec.feature 'Listing Articles' do
 
   before do
-    @article1 = Article.create(title: "1st article", body: "Lorem ipsum 1")
-    @article2 = Article.create(title: "2nd article", body: "Lorem ipsum 2")
+    muhammed = User.create!(email: "muhammed@uk.com", password: "password")
+    @article1 = muhammed.articles.create(title: "1st article", body: "Lorem ipsum 1")
+    @article2 = muhammed.articles.create(title: "2nd article", body: "Lorem ipsum 2")
   end
   scenario 'User list all articles' do
     visit root_path

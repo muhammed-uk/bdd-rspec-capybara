@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.feature 'Showing an Article' do
   before do
-    @article = Article.create(title: "My Article", body: "Body of my article")
+    muhammed = User.create!(email: "muhammed@uk.com", password: "password")
+    @article = muhammed.articles.create(title: "My Article", body: "Body of my article")
   end
 
   scenario "A user shows an article" do

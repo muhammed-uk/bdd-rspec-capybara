@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe "Articles", type: :request do
 
   before do
-    @article = Article.create(title: "1st Article", body: "Content for 1st article")
+    muhammed = User.create!(email: "muhammed@uk.com", password: "password")
+    @article = muhammed.articles.create(title: "1st Article", body: "Content for 1st article")
   end
 
   describe 'GET /articles/:id' do
